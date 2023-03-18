@@ -23,7 +23,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //блокирование ввода в поле с клавиатуры
+        historytextView.isEditable = false
+        // Do any additional setup after loading the view.
         resultLable.text = "Значение счетчика: \(increae)"
         historytextView.text = "История изменений: \n"
         
