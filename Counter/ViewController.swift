@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     //Вывод результата
     @IBOutlet weak var resultLable: UILabel!
     
+    @IBOutlet weak var plusButtun: UIButton!
+    @IBOutlet weak var minesButton: UIButton!
+    
+    
     //Вьющка для хранения истории
     @IBOutlet weak var historytextView: UITextView!
     
@@ -28,6 +32,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         resultLable.text = "Значение счетчика: \(increae)"
         historytextView.text = "История изменений: \n"
+        
+        //закругление кнопок
+        plusButtun.layer.cornerRadius = 10
+        plusButtun.clipsToBounds = true
+        minesButton.layer.cornerRadius = 10
+        minesButton.clipsToBounds = true
+        
         
     }
     
