@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     
-    //Функция уменьшение счетсика
+    //Функция уменьшение счетчика
     @IBAction func decreaseButton(_ sender: Any) {
         if increase != 0 {
             increase = increase-1
