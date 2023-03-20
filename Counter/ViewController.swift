@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     //переменная для хранения роезультата
     private var increase: Int = 0
     
-    //Вывод результата
+    //Вывод результата.
     @IBOutlet weak private var resultLabel: UILabel!
     
     @IBOutlet weak private var plusButton: UIButton!
