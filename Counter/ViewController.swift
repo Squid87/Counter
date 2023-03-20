@@ -28,6 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //блокирование ввода в поле с клавиатуры
         HistoryTextView.isEditable = false
         // Do any additional setup after loading the view.
