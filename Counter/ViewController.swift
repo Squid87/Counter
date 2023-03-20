@@ -6,36 +6,37 @@
 //
 
 import UIKit
-let now = Date()
-let flags = NSCalendar.Unit(rawValue: UInt.max)
-let components = (Calendar.current as NSCalendar).components(flags, from: now)
+
+private let now = Date()
+private let flags = NSCalendar.Unit(rawValue: UInt.max)
+private let components = (Calendar.current as NSCalendar).components(flags, from: now)
 
 class ViewController: UIViewController {
 
     //переменная для хранения роезультата
-    var increae: Int = 0
+    private var increase: Int = 0
     
     //Вывод результата
-    @IBOutlet weak var resultLable: UILabel!
+    @IBOutlet weak private var resultLabel: UILabel!
     
-    @IBOutlet weak var plusButtun: UIButton!
-    @IBOutlet weak var minesButton: UIButton!
+    @IBOutlet weak private var plusButton: UIButton!
+    @IBOutlet weak private var minesButton: UIButton!
     
     
     //Вьющка для хранения истории
-    @IBOutlet weak var historytextView: UITextView!
+    @IBOutlet weak private var HistoryTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //блокирование ввода в поле с клавиатуры
-        historytextView.isEditable = false
+        HistoryTextView.isEditable = false
         // Do any additional setup after loading the view.
-        resultLable.text = "Значение счетчика: \(increae)"
-        historytextView.text = "История изменений: \n"
+        resultLabel.text = "Значение счетчика: \(increase)"
+        HistoryTextView.text = "История изменений: \n"
         
         //закругление кнопок
-        plusButtun.layer.cornerRadius = 10
-        plusButtun.clipsToBounds = true
+        plusButton.layer.cornerRadius = 10
+        plusButton.clipsToBounds = true
         minesButton.layer.cornerRadius = 10
         minesButton.clipsToBounds = true
         
@@ -43,26 +44,26 @@ class ViewController: UIViewController {
     }
     
     //Функция увеличения счетчика
-    @IBAction func increaseBitton(_ sender: Any) {
-        increae = increae+1
-        resultLable.text = "Значение счетчика: \(increae)"
+    @IBAction func increaseButton(_ sender: Any) {
+        increase = increase+1
+        resultLabel.text = "Значение счетчика: \(increase)"
         
         //«[дата и время]: значение увеличено»
-        historytextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)], значение изменено на +1 \n")
+        HistoryTextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)], значение изменено на +1 \n")
     }
     
     
     //Функция уменьшение счетсика
     @IBAction func decreaseButton(_ sender: Any) {
-        if increae != 0 {
-            increae = increae-1
-            resultLable.text = "Значение счетчика: \(increae)"
+        if increase != 0 {
+            increase = increase-1
+            resultLabel.text = "Значение счетчика: \(increase)"
             //«[дата и время]: значение уменьшено»
-            historytextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)], значение изменено на -1 \n")
+            HistoryTextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)], значение изменено на -1 \n")
         }
         //«[дата и время]: попытка уменьшить значение счётчика ниже 0»
         else{
-            historytextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)],попытка уменьшить значение счётчика ниже 0 \n")
+            HistoryTextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)],попытка уменьшить значение счётчика ниже 0 \n")
         }
         
     }
@@ -70,10 +71,10 @@ class ViewController: UIViewController {
     //Функция обнуление счетчика
     @IBAction func resetCounter(_ sender: Any) {
         
-        increae = 0
-        resultLable.text = "Значение счетчика: \(increae)"
+        increase = 0
+        resultLabel.text = "Значение счетчика: \(increase)"
         //«[дата и время]: значение сброшено»
-        historytextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)], значение сброшено \n")
+        HistoryTextView.text.append("[\(components.day!).\(components.month!).\(components.year!)], \(components.hour!):\(components.minute!)], значение сброшено \n")
     }
     
     

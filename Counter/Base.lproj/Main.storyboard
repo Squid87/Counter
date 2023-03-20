@@ -26,7 +26,7 @@
                                     <color key="baseBackgroundColor" systemColor="systemPurpleColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="increaseBitton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="haM-8F-uH8"/>
+                                    <action selector="increaseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Oq-3F-K3k"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFd-za-hVG">
@@ -98,10 +98,10 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="historytextView" destination="4nA-k8-IUv" id="OJI-Fd-YSc"/>
+                        <outlet property="HistoryTextView" destination="4nA-k8-IUv" id="OJI-Fd-YSc"/>
                         <outlet property="minesButton" destination="CFd-za-hVG" id="BEC-OC-oQt"/>
-                        <outlet property="plusButtun" destination="a0H-Wf-xz0" id="x9n-Lo-22B"/>
-                        <outlet property="resultLable" destination="XOA-El-ViO" id="5cI-h8-U11"/>
+                        <outlet property="plusButton" destination="a0H-Wf-xz0" id="kux-LT-SwS"/>
+                        <outlet property="resultLabel" destination="XOA-El-ViO" id="zED-uL-q5G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
